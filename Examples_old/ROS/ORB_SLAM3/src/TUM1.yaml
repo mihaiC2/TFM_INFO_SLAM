@@ -7,40 +7,27 @@ File.version: "1.0"
 
 Camera.type: "PinHole"
 
-# Camera calibration and distortion parameters (OpenCV) 
-## Camara portátil:
-# Camera1.fx: 517.306408
-# Camera1.fy: 516.469215
-# Camera1.cx: 318.643040
-# Camera1.cy: 255.313989
-
-# Camera1.k1: 0.262383
-# Camera1.k2: -0.953104
-# Camera1.p1: -0.005358
-# Camera1.p2: 0.002628
-# Camera1.k3: 1.163314
-
-## Imagen sintética threejs
-Camera1.fx: 514.6822
-Camera1.fy: 514.6822
-Camera1.cx: 320.0
-Camera1.cy: 240.0
-
-Camera1.k1: 0.0
-Camera1.k2: 0.0
-Camera1.p1: 0.0
-Camera1.p2: 0.0
-Camera1.k3: 0.0
+# Camera resolution
+Camera.width: 640
+Camera.height: 480
 
 # Camera frames per second 
 Camera.fps: 30
 
+# Camera calibration and distortion parameters (OpenCV) 
+Camera1.fx: 543.765271
+Camera1.fy: 544.543886
+Camera1.cx: 331.684636
+Camera1.cy: 241.537566
+
+Camera1.k1: -0.068748
+Camera1.k2: 0.419849
+Camera1.p1: -0.000221
+Camera1.p2: -0.005046
+Camera1.k3: -0.700801
+
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
-
-# Camera resolution
-Camera.width: 640
-Camera.height: 480
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters

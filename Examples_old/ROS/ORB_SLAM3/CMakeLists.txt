@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+cmake_minimum_required(VERSION 2.8.3)
 
-rosbuild_init()
+find_package(catkin REQUIRED COMPONENTS roscpp tf sensor_msgs image_transport cv_bridge)
+include_directories(${catkin_INCLUDE_DIRS})
+
 include_directories(${PROJECT_SOURCE_DIR}/../../../Thirdparty/Sophus)
 
 IF(NOT ROS_BUILD_TYPE)
@@ -48,9 +49,11 @@ ${PROJECT_SOURCE_DIR}/../../../
 ${PROJECT_SOURCE_DIR}/../../../include
 ${PROJECT_SOURCE_DIR}/../../../include/CameraModels
 ${Pangolin_INCLUDE_DIRS}
+/usr/include/eigen3
 )
 
 set(LIBS 
+${catkin_LIBRARIES}
 ${OpenCV_LIBS} 
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
@@ -61,7 +64,7 @@ ${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM3.so
 )
 
 # Node for monocular camera
-rosbuild_add_executable(Mono
+add_executable(Mono
 src/ros_mono.cc
 )
 

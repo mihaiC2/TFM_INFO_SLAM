@@ -1,0 +1,10 @@
+services:
+  slam_node:
+    image: mihac2/tfm_info:latest
+    ports:
+      - "9090:9090"
+    environment:
+      - USE_VIEWER=0      # 0 | 1
+      # Si quieres usar Viewer, necesitas un servidor que haga de capturador de la pantalla
+      # como VcXsrv. Si no deseas Viewer comenta esta línea 
+      # - DISPLAY=host.docker.internal:0.0
